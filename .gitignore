@@ -19,3 +19,11 @@ buildNumber.properties
 *.iml
 
 .idea
+.idea/vcs.xml
+.idea/uiDesigner.xml
+.idea/misc.xml
+.idea/jarRepositories.xml
+.idea/git_toolbox_blame.xml
+.idea/encodings.xml
+.idea/compiler.xml
+.idea/.gitignore

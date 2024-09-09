@@ -7,9 +7,9 @@ public class Search2DMatrixSolution {
 
     public static boolean searchMatrix(int[][] matrix, int target) {
         // Создаем переменную с кол-вом рядов
-        int ROWS = matrix.length;
+        final int ROWS = matrix.length;
         // Создаем переменную с кол-вом колонок
-        int COLS = matrix[0].length;
+        final int COLS = matrix[0].length;
 
         // Создаем переменную для верхнего ряда
         int top = 0;
@@ -39,7 +39,7 @@ public class Search2DMatrixSolution {
         }
 
         // если указатели top и bot пересекли друг друга, то возвращаем false, это значит что мы не нашли ряд с нужным числом
-        if (!(bot >= top)) {
+        if (bot < top) {
             return false;
         }
 
