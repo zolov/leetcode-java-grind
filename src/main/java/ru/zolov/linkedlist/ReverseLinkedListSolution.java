@@ -40,20 +40,19 @@ public class ReverseLinkedListSolution {
      */
 
     public static ListNode reverseList(ListNode head) {
-        // Объявляем переменные для Текущего узла, Предыдущего узла, Следующего Текущего узла
+        // Объявляем переменные для Текущего узла, Предыдущего узла
         ListNode current = head;
-        ListNode previous = null;
-        ListNode next = null;
+        ListNode prev = null;
 
         // Пока Текущий узел не равен null
         while (current != null) {
             // Сохраняем ссылку на следующий узел от текущего. Для того чтобы сместить туда current для следующей итерации
-            next = current.next;
+            var next = current.next;
             // Меняем ссылку у следующего узла на предыдущий (делаем инверсию связи)
-            current.next = previous;
+            current.next = prev;
 
             // Сохраняем в переменную предыдущего узла ссылку на текущий узел
-            previous = current;
+            prev = current;
             // Сохраняем в переменную текущего узла ссылку на следующий узел
             current = next;
         }
@@ -63,7 +62,7 @@ public class ReverseLinkedListSolution {
         //                            prev    curr
         // Возвращаем предыдущий узел как корневой
         // В current узле находится null
-        return previous;
+        return prev;
     }
 
     //  0 -> 1 -> 2 ->  3 -> null
