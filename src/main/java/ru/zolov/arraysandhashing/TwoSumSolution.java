@@ -1,4 +1,4 @@
-package ru.zolov.arrays;
+package ru.zolov.arraysandhashing;
 
 import java.util.Arrays;
 import java.util.HashMap;

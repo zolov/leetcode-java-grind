@@ -1,4 +1,4 @@
-package ru.zolov.arrays;
+package ru.zolov.arraysandhashing;
 
 import java.util.HashMap;
 
@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author skaiur
  */
 public class ValidAnagramSolution {
-    static boolean isAnagram(String s, String t) {
+    static boolean isAnagram2(String s, String t) {
         // проверяем что длинна строк совпадает, иначе это не анаграмма
         if (s.length() != t.length()) return false;
 
@@ -28,7 +28,7 @@ public class ValidAnagramSolution {
         return countS.equals(countT);
     }
 
-    static boolean isAnagram2(String s, String t) {
+    static boolean isAnagram(String s, String t) {
         // проверяем что длинна строк совпадает, иначе это не анаграмма
         if (s.length() != t.length()) return false;
 

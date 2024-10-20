@@ -14,49 +14,42 @@ import java.util.Deque;
  *
  * @author skaiur
  */
-public class MInStackSolution {
-    static class MinStack {
+public class MinStackSolution {
+  static class MinStack {
 
-        private final Deque<Integer> stack;
-        private final Deque<Integer> min;
+    private final Deque<Integer> stack;
+    private final Deque<Integer> min;
 
-        public MinStack() {
-            this.min = new ArrayDeque<>();
-            this.stack = new ArrayDeque<>();
-        }
-
-        public void push(int val) {
-            stack.push(val);
-            int minVal = Math.min(
-                    val,
-                    min.isEmpty() ? val : min.peek()
-            );
-            min.push(minVal);
-        }
-
-        public void pop() {
-            stack.pop();
-            min.pop();
-        }
-
-        public int top() {
-            return stack.getFirst();
-        }
-
-        public int getMin() {
-            return this.min.peek();
-        }
+    public MinStack() {
+      this.min = new ArrayDeque<>();
+      this.stack = new ArrayDeque<>();
     }
 
-    public static void main(String[] args) {
-        MinStack minStack = new MinStack();
-        minStack.push(1);
-        minStack.push(2);
-        minStack.push(0);
-
-        System.out.println(minStack.getMin()); // return 0
-        minStack.pop();
-        System.out.println(minStack.top());    // return 2
-        System.out.println(minStack.getMin()); // return 1
+    public void push(int val) {
+      stack.push(val);
+      int minVal = Math.min(val, min.isEmpty() ? val : min.peek());
+      min.push(minVal);
     }
+
+    public void pop() {
+      stack.pop();
+      min.pop();
+    }
+
+    public int top() { return stack.getFirst(); }
+
+    public int getMin() { return this.min.peek(); }
+  }
+
+  public static void main(String[] args) {
+    MinStack minStack = new MinStack();
+    minStack.push(1);
+    minStack.push(2);
+    minStack.push(0);
+
+    System.out.println(minStack.getMin()); // return 0
+    minStack.pop();
+    System.out.println(minStack.top());    // return 2
+    System.out.println(minStack.getMin()); // return 1
+  }
 }
